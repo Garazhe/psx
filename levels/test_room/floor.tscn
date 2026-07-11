@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dauy2cgvaocqk"]
+
+[ext_resource type="PackedScene" uid="uid://b2h14uk6anwsi" path="res://entities/player/player.tscn" id="1_tciw1"]
+[ext_resource type="Texture2D" uid="uid://cruvnawfccel2" path="res://assets/textures/texupload-STP4-1C3C8F3414124D9C-BA9E0401171BF6F2-64x256-0-192-68x64-P0-15.png" id="2_fpusa"]
+[ext_resource type="PackedScene" uid="uid://cy7em18e501sf" path="res://ui/dialogs/dialog_ui.tscn" id="2_u74kl"]
+[ext_resource type="PackedScene" uid="uid://bswl6ayvobrms" path="res://ui/dialogs/dialog_trigger.tscn" id="3_7jl71"]
+[ext_resource type="PackedScene" uid="uid://xbuwbmuduvt7" path="res://assets/models/ssss.tscn" id="9_u74kl"]
+[ext_resource type="PackedScene" uid="uid://ceuvhbjmey7sv" path="res://assets/models/computer_sem.tscn" id="10_7jl71"]
+[ext_resource type="PackedScene" uid="uid://babr24uijtnh5" path="res://assets/models/noText.tscn" id="10_c26uo"]
+[ext_resource type="PackedScene" uid="uid://do6jv4k3lycc3" path="res://assets/models/TableCheck.glb" id="10_v5p3x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwugv"]
+albedo_texture = ExtResource("2_fpusa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpusa"]
+albedo_texture = ExtResource("2_fpusa")
+uv1_scale = Vector3(100, 100, 100)
+uv1_triplanar = true
+texture_filter = 0
+
+[node name="Node3D" type="Node3D" unique_id=255792297]
+
+[node name="Player" parent="." unique_id=1199600279 instance=ExtResource("1_tciw1")]
+transform = Transform3D(1.085188, 0, 0, 0, 1.0851879, 0, 0, 0, 1.085188, 6.2530627, 0, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Player" unique_id=661348800]
+target_position = Vector3(0, 0, -3)
+
+[node name="dialog_ui" parent="." unique_id=569029555 instance=ExtResource("2_u74kl")]
+mouse_filter = 2
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1830700650]
+transform = Transform3D(0.9999932, 0.0026596533, -0.0025535107, -0.002658129, 0.9999963, 0.00060007576, 0.0025550972, -0.00059328414, 0.99999654, 6.8241663, -3.1750884, -4.2913265)
+material_override = SubResource("StandardMaterial3D_kwugv")
+use_collision = true
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_fpusa")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=225830767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1076527, -2.1977777, -7.632393)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="CSGSphere3D" unique_id=27815955 groups=["pickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03283906)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGSphere3D/RigidBody3D" unique_id=950893384]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGSphere3D/RigidBody3D" unique_id=1851052742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.51891327)
+
+[node name="dialog_trigger" parent="." unique_id=1416930063 instance=ExtResource("3_7jl71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.133502, -1.9400514, -6.2931256)
+
+[node name="dialog_trigger2" parent="." unique_id=370132531 instance=ExtResource("3_7jl71")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 9.969338, -1.954726, -5.7915053)
+names = Array[String](["Him", "you", "Him", "You", "Person"])
+dialogs = Array[String](["Hello, sir", "Bro", "Why would you talk like this?", "Idk lol", "Well, as you wish"])
+
+[node name="TableCheck" parent="." unique_id=498857537 instance=ExtResource("10_v5p3x")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 15.610408, -3.0061724, -0.90599394)
+
+[node name="ComputerSem2" parent="." unique_id=1246923031 instance=ExtResource("10_7jl71")]
+transform = Transform3D(0.69999903, -0.0011649099, 0.00015943231, 0.0011653767, 0.699996, -0.0020718859, -0.00015598345, 0.0020721485, 0.69999695, 15.743466, -1.9285653, -0.31643915)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1021774998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.234271, 0.29042497, -11.004597)
+light_color = Color(0.9341636, 1, 0.6242254, 1)
+light_energy = 1.149
+light_volumetric_fog_energy = 1.942
+shadow_enabled = true
+omni_range = 12.709
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=76008263]
+transform = Transform3D(0.6137886, -0.78268564, 0.10327996, -0.0851386, 0.06443514, 0.99428344, -0.7848663, -0.6190729, -0.0270872, 26.006502, -0.2565363, 9.44896)
+light_color = Color(1, 0.95686275, 0.72156864, 1)
+light_energy = 16.0
+light_indirect_energy = 2.044
+shadow_enabled = true
+spot_range = 4096.0
+spot_angle = 44.81
+
+[node name="Pvz_Tree" parent="." unique_id=1240488557 instance=ExtResource("9_u74kl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -2.5726128, -8)
+
+[node name="Pvz_Tree" parent="Pvz_Tree" unique_id=1471314791 instance=ExtResource("9_u74kl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.430504, 0.39168406, 0.42980862)
+
+[node name="Pvz_Tree2" parent="." unique_id=1231479900 instance=ExtResource("10_c26uo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.32827, -2.6728783, 9.552505)

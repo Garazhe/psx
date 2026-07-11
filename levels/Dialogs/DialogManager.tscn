@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cb545225i8vub"]
+
+[sub_resource type="GDScript" id="GDScript_mm8tm"]
+script/source = "# Скрипт DialogueBox.gd
+extends CanvasLayer
+
+@onready var label = $Panel/DialogueText
+
+func _ready():
+	hide() # Прячем при старте игры
+
+func show_text(text_to_display: String):
+	label.text = text_to_display
+	show()
+
+func close():
+	hide()
+"
+
+[node name="DialogBox" type="CanvasLayer" unique_id=2069210369]
+script = SubResource("GDScript_mm8tm")
+
+[node name="Panel" type="Panel" parent="." unique_id=1247831736]
+offset_left = -4.0
+offset_top = 372.0
+offset_right = 288.36606
+offset_bottom = 420.34076
+scale = Vector2(2.2779663, 2.2779663)
+
+[node name="DialogText" type="Label" parent="Panel" unique_id=1863296496]
+layout_mode = 0
+offset_left = 4.828869
+offset_top = 6.5848207
+offset_right = 278.75742
+offset_bottom = 43.8988

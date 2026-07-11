@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://gp21kcw7px55"]
+
+[ext_resource type="PackedScene" uid="uid://bmfn38ku0liww" path="res://levels/PVZ _ROOM/Pvz_Tree.glb" id="1_1a2t2"]
+
+[node name="Node3D" type="Node3D" unique_id=61288842]
+
+[node name="Pvz_Tree" parent="." unique_id=1240488557 instance=ExtResource("1_1a2t2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10760844, 0, 2.5522652)

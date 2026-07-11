@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://jxebroiow876"]
+
+[ext_resource type="Script" uid="uid://dsviifsrwjwbj" path="res://npc.gd" id="1_g5t84"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yxg7g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5sv61"]
+
+[node name="NPC" type="CharacterBody3D" unique_id=1571039835]
+script = ExtResource("1_g5t84")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=460639658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01789093)
+shape = SubResource("BoxShape3D_yxg7g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1379552690]
+mesh = SubResource("BoxMesh_5sv61")

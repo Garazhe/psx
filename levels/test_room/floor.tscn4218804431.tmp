@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dauy2cgvaocqk"]
+
+[ext_resource type="Script" uid="uid://byhjkm4ksd1g0" path="res://levels/test_room/floor.gd" id="1_728dk"]
+[ext_resource type="PackedScene" uid="uid://b2h14uk6anwsi" path="res://entities/player/player.tscn" id="1_tciw1"]
+[ext_resource type="Texture2D" uid="uid://cruvnawfccel2" path="res://assets/textures/texupload-STP4-1C3C8F3414124D9C-BA9E0401171BF6F2-64x256-0-192-68x64-P0-15.png" id="2_fpusa"]
+[ext_resource type="Texture2D" uid="uid://b0gh7pjyevfdg" path="res://assets/textures/overcast_soil_puresky_2k.exr" id="4_fpusa"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_fpusa"]
+panorama = ExtResource("4_fpusa")
+
+[sub_resource type="Sky" id="Sky_bdvmo"]
+sky_material = SubResource("PanoramaSkyMaterial_fpusa")
+
+[sub_resource type="Environment" id="Environment_a2jhn"]
+background_mode = 2
+sky = SubResource("Sky_bdvmo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwugv"]
+albedo_texture = ExtResource("2_fpusa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpusa"]
+albedo_texture = ExtResource("2_fpusa")
+
+[node name="Node3D" type="Node3D" unique_id=255792297]
+script = ExtResource("1_728dk")
+
+[node name="SkyBox" type="WorldEnvironment" parent="." unique_id=2048126892]
+environment = SubResource("Environment_a2jhn")
+
+[node name="Player" parent="." unique_id=1199600279 instance=ExtResource("1_tciw1")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1830700650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.169408, -3.1379333, -3.9888651)
+material_override = SubResource("StandardMaterial3D_kwugv")
+use_collision = true
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_fpusa")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=225830767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1935165, 3.3063612)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="CSGSphere3D" unique_id=27815955 groups=["pickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03283906)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGSphere3D/RigidBody3D" unique_id=950893384]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGSphere3D/RigidBody3D" unique_id=1851052742]

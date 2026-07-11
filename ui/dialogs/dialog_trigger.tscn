@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bswl6ayvobrms"]
+
+[ext_resource type="Script" uid="uid://btttl6lrvl53k" path="res://dialog_trigger.gd" id="1_j7au5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gif47"]
+
+[node name="dialog_trigger" type="Node3D" unique_id=1416930063]
+script = ExtResource("1_j7au5")
+names = Array[String](["You", "Jeffery", "Jeffery", "You", "Jeff"])
+dialogs = Array[String](["Sup", "I like Roblox", "It is  a very nice game", "Ok", "Bye, dumbass"])
+
+[node name="trigger" type="Area3D" parent="." unique_id=417648400]
+
+[node name="collision" type="CollisionShape3D" parent="trigger" unique_id=735968016]
+shape = SubResource("BoxShape3D_gif47")
+debug_color = Color(0.8896658, 0.00027319015, 0.8002107, 1)
+
+[connection signal="body_entered" from="trigger" to="." method="dialog_start"]

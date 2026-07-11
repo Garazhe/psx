@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dosjeiwe5lsgs"]
+
+[ext_resource type="PackedScene" uid="uid://dauy2cgvaocqk" path="res://levels/test_room/floor.tscn" id="1_gdhs1"]
+
+[node name="Node3D" type="Node3D" unique_id=1989637696]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=933622179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4910038, 0.04295492)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="CSGSphere3D" unique_id=1242577754]
+mass = 0.886
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGSphere3D/RigidBody3D" unique_id=1897483263]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGSphere3D/RigidBody3D" unique_id=973370269]
+
+[node name="Node3D" parent="CSGSphere3D" unique_id=255792297 instance=ExtResource("1_gdhs1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3966272, 0, 0)

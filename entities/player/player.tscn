@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b2h14uk6anwsi"]
+
+[ext_resource type="Script" uid="uid://84ef4gmh44m" path="res://entities/player/player.gd" id="1_symyc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfv1e"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1199600279]
+script = ExtResource("1_symyc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871787417]
+shape = SubResource("CapsuleShape3D_sfv1e")
+
+[node name="HoldPosition" type="Marker3D" parent="." unique_id=520904029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5389345, 0.22621298, -1.204983)
+
+[node name="InteractionRay" type="RayCast3D" parent="." unique_id=1933426042]
+target_position = Vector3(0, -1, -3)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=752559122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5412523, 0)
+
+[node name="HoldPosition" type="Marker3D" parent="." unique_id=520904029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5389345, 0.22621298, -1.204983)
+
+[node name="InteractionRay" type="RayCast3D" parent="." unique_id=1933426042]
+target_position = Vector3(0, -1, -3)
