@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	
 
 	move_and_slide()
-#hui test aboba
+
 #Dialog
 
 func check_interaction():
