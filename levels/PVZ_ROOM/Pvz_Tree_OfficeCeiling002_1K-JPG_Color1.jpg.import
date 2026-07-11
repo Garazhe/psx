@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d17lp8htsv2x1"
-path.s3tc="res://.godot/imported/Pvz_Tree_OfficeCeiling002_1K-JPG_Color1.jpg-37b43b52241f3b0cfa74507f11e83331.s3tc.ctex"
+path.s3tc="res://.godot/imported/Pvz_Tree_OfficeCeiling002_1K-JPG_Color1.jpg-245baf58a25fa06242cac8386b12fc68.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://levels/PVZ _ROOM/Pvz_Tree_OfficeCeiling002_1K-JPG_Color1.jpg"
-dest_files=["res://.godot/imported/Pvz_Tree_OfficeCeiling002_1K-JPG_Color1.jpg-37b43b52241f3b0cfa74507f11e83331.s3tc.ctex"]
+source_file="res://levels/PVZ_ROOM/Pvz_Tree_OfficeCeiling002_1K-JPG_Color1.jpg"
+dest_files=["res://.godot/imported/Pvz_Tree_OfficeCeiling002_1K-JPG_Color1.jpg-245baf58a25fa06242cac8386b12fc68.s3tc.ctex"]
 
 [params]
 

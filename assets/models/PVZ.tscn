@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://xbuwbmuduvt7"]
 
-[ext_resource type="Texture2D" uid="uid://v5dmoo5smdoh" path="res://levels/PVZ _ROOM/Pvz_Tree_Tiles074_1K-PNG_Color1.png" id="1_oqbey"]
-[ext_resource type="Texture2D" uid="uid://d17lp8htsv2x1" path="res://levels/PVZ _ROOM/Pvz_Tree_OfficeCeiling002_1K-JPG_Color1.jpg" id="2_5p6h2"]
-[ext_resource type="Texture2D" uid="uid://d24ky7jwhi62f" path="res://levels/PVZ _ROOM/Pvz_Tree_Concrete046_1K-PNG_Color1.png" id="3_t1t1f"]
+[ext_resource type="Texture2D" uid="uid://v5dmoo5smdoh" path="res://levels/PVZ_ROOM/Pvz_Tree_Tiles074_1K-PNG_Color1.png" id="1_oqbey"]
+[ext_resource type="Texture2D" uid="uid://d17lp8htsv2x1" path="res://levels/PVZ_ROOM/Pvz_Tree_OfficeCeiling002_1K-JPG_Color1.jpg" id="2_5p6h2"]
+[ext_resource type="Texture2D" uid="uid://nxvw54fo5nua" path="res://assets/textures/Pvz_RoomScale_Concrete046_1K-PNG_Color1.png" id="3_sakeo"]
+[ext_resource type="Texture2D" uid="uid://d24ky7jwhi62f" path="res://levels/PVZ_ROOM/Pvz_Tree_Concrete046_1K-PNG_Color1.png" id="3_t1t1f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0rpa"]
 resource_name = "Material.001"
@@ -88,6 +89,11 @@ shadow_mesh = SubResource("ArrayMesh_n8kd8")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0x2rt"]
 data = PackedVector3Array(-4.5912423, 0, 4.540576, 4.5912423, 0, -4.540576, -4.5912423, 0, -4.540576, -4.5912423, 0, 4.540576, 4.5912423, 0, 4.540576, 4.5912423, 0, -4.540576)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sakeo"]
+albedo_texture = ExtResource("3_sakeo")
+uv1_scale = Vector3(5, 5, 5)
+uv1_triplanar_sharpness = 1.4142146
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e51hu"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vap8n"]
@@ -121,6 +127,10 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vap8n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4jm0"]
+albedo_texture = ExtResource("3_sakeo")
+uv1_scale = Vector3(4, 4, 4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sy8v7"]
 
@@ -256,12 +266,25 @@ mesh = SubResource("ArrayMesh_d4olh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/StaticBody3D" unique_id=3773049]
 shape = SubResource("ConcavePolygonShape3D_0x2rt")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling" unique_id=826014311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9733458, -0.20157862, -0.065074205)
+light_color = Color(1, 0.95686275, 0.72156864, 1)
+light_energy = 0.5
+
 [node name="Front" type="MeshInstance3D" parent="." unique_id=1054837978]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5312694, 4.446997)
+material_override = SubResource("StandardMaterial3D_sakeo")
 mesh = SubResource("ArrayMesh_3wtjn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Front" unique_id=1093429405]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Front/StaticBody3D" unique_id=1647571097]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 
 [node name="Back" type="MeshInstance3D" parent="." unique_id=1636761018]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5312694, -4.442933)
+material_override = SubResource("StandardMaterial3D_k4jm0")
 mesh = SubResource("ArrayMesh_dn5x4")
 
 [node name="Left" type="MeshInstance3D" parent="." unique_id=689175249]

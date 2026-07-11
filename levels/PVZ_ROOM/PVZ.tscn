@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://2x5bccsbw3h7"]
+
+[ext_resource type="PackedScene" uid="uid://xbuwbmuduvt7" path="res://assets/models/PVZ.tscn" id="1_jptd0"]
+[ext_resource type="PackedScene" uid="uid://b2h14uk6anwsi" path="res://entities/player/player.tscn" id="2_gct8x"]
+
+[node name="Pvz" type="Node3D" unique_id=1507325787]
+
+[node name="Pvz_Tree" parent="." unique_id=1240488557 instance=ExtResource("1_jptd0")]
+
+[node name="Player" parent="." unique_id=1199600279 instance=ExtResource("2_gct8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1225672, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Player" unique_id=577938972]

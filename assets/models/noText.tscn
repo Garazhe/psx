@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://babr24uijtnh5"]
 
-[ext_resource type="Texture2D" uid="uid://d17lp8htsv2x1" path="res://levels/PVZ _ROOM/Pvz_Tree_OfficeCeiling002_1K-JPG_Color1.jpg" id="1_335nj"]
+[ext_resource type="Texture2D" uid="uid://d17lp8htsv2x1" path="res://levels/PVZ_ROOM/Pvz_Tree_OfficeCeiling002_1K-JPG_Color1.jpg" id="1_335nj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0rpa"]
 resource_name = "Material.001"

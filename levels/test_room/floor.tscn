@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cruvnawfccel2" path="res://assets/textures/texupload-STP4-1C3C8F3414124D9C-BA9E0401171BF6F2-64x256-0-192-68x64-P0-15.png" id="2_fpusa"]
 [ext_resource type="PackedScene" uid="uid://cy7em18e501sf" path="res://ui/dialogs/dialog_ui.tscn" id="2_u74kl"]
 [ext_resource type="PackedScene" uid="uid://bswl6ayvobrms" path="res://ui/dialogs/dialog_trigger.tscn" id="3_7jl71"]
-[ext_resource type="PackedScene" uid="uid://xbuwbmuduvt7" path="res://assets/models/ssss.tscn" id="9_u74kl"]
+[ext_resource type="PackedScene" uid="uid://xbuwbmuduvt7" path="res://assets/models/PVZ.tscn" id="9_u74kl"]
 [ext_resource type="PackedScene" uid="uid://ceuvhbjmey7sv" path="res://assets/models/computer_sem.tscn" id="10_7jl71"]
 [ext_resource type="PackedScene" uid="uid://babr24uijtnh5" path="res://assets/models/noText.tscn" id="10_c26uo"]
 [ext_resource type="PackedScene" uid="uid://do6jv4k3lycc3" path="res://assets/models/TableCheck.glb" id="10_v5p3x"]
@@ -21,7 +21,7 @@ texture_filter = 0
 [node name="Node3D" type="Node3D" unique_id=255792297]
 
 [node name="Player" parent="." unique_id=1199600279 instance=ExtResource("1_tciw1")]
-transform = Transform3D(1.085188, 0, 0, 0, 1.0851879, 0, 0, 0, 1.085188, 6.2530627, 0, 0)
+transform = Transform3D(1.085188, 0, 0, 0, 1.0851879, 0, 0, 0, 1.085188, 6.2626047, -1.1920929e-07, 0.0009782314)
 
 [node name="RayCast3D" type="RayCast3D" parent="Player" unique_id=661348800]
 target_position = Vector3(0, 0, -3)
@@ -30,7 +30,7 @@ target_position = Vector3(0, 0, -3)
 mouse_filter = 2
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=1830700650]
-transform = Transform3D(0.9999932, 0.0026596533, -0.0025535107, -0.002658129, 0.9999963, 0.00060007576, 0.0025550972, -0.00059328414, 0.99999654, 6.8241663, -3.1750884, -4.2913265)
+transform = Transform3D(0.9999932, 0.0026596533, -0.0025535107, -0.002658129, 0.9999963, 0.00060007576, 0.0025550972, -0.00059328414, 0.99999654, 6.8241663, -3.0276651, -4.2913265)
 material_override = SubResource("StandardMaterial3D_kwugv")
 use_collision = true
 size = Vector3(50, 1, 50)

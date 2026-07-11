@@ -4,7 +4,7 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_play_pressed() -> void:
-	pass
+	get_tree().change_scene_to_file("res://levels/PVZ_ROOM/PVZ.tscn")
 
 
 func _on_test_room_pressed() -> void:
