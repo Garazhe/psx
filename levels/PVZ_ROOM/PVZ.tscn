@@ -8,6 +8,4 @@
 [node name="Pvz_Tree" parent="." unique_id=1240488557 instance=ExtResource("1_jptd0")]
 
 [node name="Player" parent="." unique_id=1199600279 instance=ExtResource("2_gct8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1225672, 0)
-
-[node name="RayCast3D" type="RayCast3D" parent="Player" unique_id=577938972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.27318, 0)
