@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cruvnawfccel2" path="res://assets/textures/texupload-STP4-1C3C8F3414124D9C-BA9E0401171BF6F2-64x256-0-192-68x64-P0-15.png" id="2_fpusa"]
 [ext_resource type="PackedScene" uid="uid://cy7em18e501sf" path="res://ui/dialogs/dialog_ui.tscn" id="2_u74kl"]
 [ext_resource type="PackedScene" uid="uid://bswl6ayvobrms" path="res://ui/dialogs/dialog_trigger.tscn" id="3_7jl71"]
+[ext_resource type="PackedScene" uid="uid://cgvhbxgqsq5k7" path="res://assets/models/Pva_StashRoom.blend" id="9_7jl71"]
 [ext_resource type="PackedScene" uid="uid://xbuwbmuduvt7" path="res://assets/models/PVZ.tscn" id="9_u74kl"]
 [ext_resource type="PackedScene" uid="uid://ceuvhbjmey7sv" path="res://assets/models/computer_sem.tscn" id="10_7jl71"]
+[ext_resource type="PackedScene" uid="uid://c7ui325y7n5c0" path="res://assets/models/Pva_StashRoom.glb" id="10_2082j"]
 [ext_resource type="PackedScene" uid="uid://babr24uijtnh5" path="res://assets/models/noText.tscn" id="10_c26uo"]
 [ext_resource type="PackedScene" uid="uid://do6jv4k3lycc3" path="res://assets/models/TableCheck.glb" id="10_v5p3x"]
 
@@ -30,7 +32,7 @@ target_position = Vector3(0, 0, -3)
 mouse_filter = 2
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=1830700650]
-transform = Transform3D(0.9999932, 0.0026596533, -0.0025535107, -0.002658129, 0.9999963, 0.00060007576, 0.0025550972, -0.00059328414, 0.99999654, 6.8241663, -3.0276651, -4.2913265)
+transform = Transform3D(0.9999932, 0.0026596533, -0.0025535107, -0.002658129, 0.9999963, 0.00060007576, 0.0025550972, -0.00059328414, 0.99999654, 6.842721, -3.027665, -4.278042)
 material_override = SubResource("StandardMaterial3D_kwugv")
 use_collision = true
 size = Vector3(50, 1, 50)
@@ -79,10 +81,27 @@ spot_range = 4096.0
 spot_angle = 44.81
 
 [node name="Pvz_Tree" parent="." unique_id=1240488557 instance=ExtResource("9_u74kl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -2.5726128, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1724758, -2.5195863, -8)
 
 [node name="Pvz_Tree" parent="Pvz_Tree" unique_id=1471314791 instance=ExtResource("9_u74kl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.430504, 0.39168406, 0.42980862)
 
 [node name="Pvz_Tree2" parent="." unique_id=1231479900 instance=ExtResource("10_c26uo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.32827, -2.6728783, 9.552505)
+
+[node name="Pva_StashRoom" parent="." unique_id=789119375 instance=ExtResource("9_7jl71")]
+transform = Transform3D(-0.9, 0, 1.3589622e-07, 0, 0.9, 0, -1.3589622e-07, 0, -0.9, -5.9159174, -2.4683485, -17.024288)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1516060021]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.9347587, 0.42080927, -17.057755)
+light_color = Color(0.88256735, 0.859742, 0, 1)
+light_energy = 4.809
+light_indirect_energy = 2.587
+light_volumetric_fog_energy = 0.99
+light_size = 0.258
+light_specular = 0.465
+spot_range = 6.73
+spot_angle = 57.86
+
+[node name="Pva_StashRoom2" parent="." unique_id=253764551 instance=ExtResource("10_2082j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5332522, -2.4362695, 12.874659)
