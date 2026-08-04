@@ -3,7 +3,8 @@ extends CharacterBody3D
 #variables
 @onready var raycast = $RayCast3D
 var sen = 0.005
-var SPEED = 5.0
+var walk_speed = 5.0
+var SPEED = walk_speed
 const JUMP_VELOCITY = 0
 @onready var dialoger: Node3D = get_tree().current_scene.get_node("dialog_trigger2")
 @onready var ds = dialoger.started
@@ -15,8 +16,8 @@ func _ready():
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * sen) 
-		$Camera3D.rotate_x(-event.relative.y * sen) 
-		$Camera3D.rotation.x = clamp($Camera3D.rotation.x, -PI/2, PI/2)
+		$Camera3D2.rotate_x(-event.relative.y * sen) 
+		$Camera3D2.rotation.x = clamp($Camera3D2.rotation.x, -PI/2, PI/2)
 
 
 
@@ -33,8 +34,11 @@ func _physics_process(delta: float) -> void:
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	#run
-	if  dialoger.started == false and Input.is_action_pressed("ui_run"):
-		SPEED = 10.0
+	if  SPEED<=10 and Input.is_action_pressed("ui_run"):
+		SPEED*=1.1
+	else:
+		SPEED = walk_speed
+		
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -52,3 +56,7 @@ func check_interaction():
 		var target = raycast.get_collider()
 		if target.has_method("interact"):
 			target.interact()
+			
+func quit():
+	if "ui_cancel":
+		get_tree().quit()

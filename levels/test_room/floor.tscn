@@ -4,12 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://cruvnawfccel2" path="res://assets/textures/texupload-STP4-1C3C8F3414124D9C-BA9E0401171BF6F2-64x256-0-192-68x64-P0-15.png" id="2_fpusa"]
 [ext_resource type="PackedScene" uid="uid://cy7em18e501sf" path="res://ui/dialogs/dialog_ui.tscn" id="2_u74kl"]
 [ext_resource type="PackedScene" uid="uid://bswl6ayvobrms" path="res://ui/dialogs/dialog_trigger.tscn" id="3_7jl71"]
-[ext_resource type="PackedScene" uid="uid://cgvhbxgqsq5k7" path="res://assets/models/Pva_StashRoom.blend" id="9_7jl71"]
 [ext_resource type="PackedScene" uid="uid://xbuwbmuduvt7" path="res://assets/models/PVZ.tscn" id="9_u74kl"]
 [ext_resource type="PackedScene" uid="uid://ceuvhbjmey7sv" path="res://assets/models/computer_sem.tscn" id="10_7jl71"]
 [ext_resource type="PackedScene" uid="uid://c7ui325y7n5c0" path="res://assets/models/Pva_StashRoom.glb" id="10_2082j"]
 [ext_resource type="PackedScene" uid="uid://babr24uijtnh5" path="res://assets/models/noText.tscn" id="10_c26uo"]
 [ext_resource type="PackedScene" uid="uid://do6jv4k3lycc3" path="res://assets/models/TableCheck.glb" id="10_v5p3x"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_g4v7s"]
+flip_faces = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwugv"]
 albedo_texture = ExtResource("2_fpusa")
@@ -23,10 +25,13 @@ texture_filter = 0
 [node name="Node3D" type="Node3D" unique_id=255792297]
 
 [node name="Player" parent="." unique_id=1199600279 instance=ExtResource("1_tciw1")]
-transform = Transform3D(1.085188, 0, 0, 0, 1.0851879, 0, 0, 0, 1.085188, 6.2626047, -1.1920929e-07, 0.0009782314)
+transform = Transform3D(1.085188, 0, 0, 0, 1.0851879, 0, 0, 0, 1.085188, 6.2626047, -0.98295224, 0.0009782314)
 
-[node name="RayCast3D" type="RayCast3D" parent="Player" unique_id=661348800]
-target_position = Vector3(0, 0, -3)
+[node name="Camera3D2" type="Camera3D" parent="Player" unique_id=608986901]
+transform = Transform3D(0.92149925, 0, 0, 0, 0.9214994, 0, 0, 0, 0.92149925, 0, 0.89631474, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Camera3D2" unique_id=1696293394]
+mesh = SubResource("QuadMesh_g4v7s")
 
 [node name="dialog_ui" parent="." unique_id=569029555 instance=ExtResource("2_u74kl")]
 mouse_filter = 2
@@ -89,7 +94,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.430504, 0.39168406, 0.42980
 [node name="Pvz_Tree2" parent="." unique_id=1231479900 instance=ExtResource("10_c26uo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.32827, -2.6728783, 9.552505)
 
-[node name="Pva_StashRoom" parent="." unique_id=789119375 instance=ExtResource("9_7jl71")]
+[node name="Pva_StashRoom" parent="." unique_id=789119375]
 transform = Transform3D(-0.9, 0, 1.3589622e-07, 0, 0.9, 0, -1.3589622e-07, 0, -0.9, -5.9159174, -2.4683485, -17.024288)
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1516060021]
