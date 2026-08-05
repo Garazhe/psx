@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cvewsy2ec5f2j"
-path="res://.godot/imported/Pva_StashRoom.glb-6b1f1149affa722afe202fb3934db7b7.scn"
+uid="uid://dibablnda2hug"
+path="res://.godot/imported/Shelving.glb-dbed249b4e4a6b45b353d98bf9d8a4b4.scn"
 
 [deps]
 
-source_file="res://assets/models/Pva_StashRoom.glb"
-dest_files=["res://.godot/imported/Pva_StashRoom.glb-6b1f1149affa722afe202fb3934db7b7.scn"]
+source_file="res://assets/models/Shelving.glb"
+dest_files=["res://.godot/imported/Shelving.glb-dbed249b4e4a6b45b353d98bf9d8a4b4.scn"]
 
 [params]
 
