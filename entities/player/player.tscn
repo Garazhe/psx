@@ -1,16 +1,57 @@
 [gd_scene format=3 uid="uid://b2h14uk6anwsi"]
 
 [ext_resource type="Script" uid="uid://84ef4gmh44m" path="res://entities/player/player.gd" id="1_symyc"]
-[ext_resource type="Shader" uid="uid://c58tuipe1loav" path="res://entities/player/pixel.gdshader" id="2_abrql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfv1e"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yf5fn"]
-render_priority = 0
-shader = ExtResource("2_abrql")
+[sub_resource type="Shader" id="Shader_symyc"]
+code = "shader_type spatial;
+render_mode unshaded, fog_disabled; 
 
-[sub_resource type="QuadMesh" id="QuadMesh_sglur"]
-material = SubResource("ShaderMaterial_yf5fn")
+uniform sampler2D screen_texture : hint_screen_texture;
+uniform float pixel_size : hint_range(0.0, 20.0, 1.0);
+uniform float levels: hint_range(0.0, 100.0, 0.1);
+uniform vec2 gamma;
+
+void vertex() {
+	POSITION = vec4(VERTEX.xy, 1.0, 1.0);
+}
+
+void fragment() {
+	vec2 tex_size = vec2(textureSize(screen_texture, 0));
+	vec2 pixel_count = tex_size / (pixel_size * 2.);
+	vec2 pixelated_uv = floor(SCREEN_UV * pixel_count) / pixel_count; 
+	vec4 color = texture(screen_texture, pixelated_uv);
+	
+	color.rgb = pow(color.rgb, vec3(gamma.x));
+	
+	float grayscale =max(color.r, max(color.g, color.b));
+	float lower = floor(grayscale*levels) / levels;
+	float higher = ceil(grayscale*levels) / levels;
+	
+	float lower_diff = abs(lower - grayscale);
+	float higher_diff = abs(higher - grayscale);
+	
+	float level = lower_diff < higher_diff ? lower : higher;
+	float adjustment = level / grayscale;
+	
+	color.rgb *= adjustment;
+	color.rgb = pow(color.rgb, vec3(gamma.y));
+	
+	ALBEDO = color.rgb;
+	ALPHA = color.a;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_57qmd"]
+render_priority = 0
+shader = SubResource("Shader_symyc")
+shader_parameter/pixel_size = 1.0
+shader_parameter/levels = 20.10000029951412
+shader_parameter/gamma = Vector2(0.125, 11)
+
+[sub_resource type="QuadMesh" id="QuadMesh_g4v7s"]
+material = SubResource("ShaderMaterial_57qmd")
 flip_faces = true
 size = Vector2(2, 2)
 
@@ -18,6 +59,7 @@ size = Vector2(2, 2)
 script = ExtResource("1_symyc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871787417]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_sfv1e")
 
 [node name="HoldPosition" type="Marker3D" parent="." unique_id=520904029]
@@ -26,15 +68,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5389345, 0.22621298, -1.204
 [node name="InteractionRay" type="RayCast3D" parent="." unique_id=1933426042]
 target_position = Vector3(0, -1, -3)
 
+[node name="Camera3D" type="Camera3D" parent="." unique_id=752559122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8894037, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D" unique_id=1728133074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009087563, -0.0031234622, -0.0051225424)
+extra_cull_margin = 16384.0
+custom_aabb = AABB(2, 0, 0, 0, 0, 0)
+mesh = SubResource("QuadMesh_g4v7s")
+
 [node name="HoldPosition2" type="Marker3D" parent="." unique_id=526892746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5389345, 0.22621298, -1.204983)
 
 [node name="InteractionRay2" type="RayCast3D" parent="." unique_id=748902996]
 target_position = Vector3(0, -1, -3)
-
-[node name="Camera3D2" type="Camera3D" parent="." unique_id=2101462916]
-transform = Transform3D(0.92149925, 0, 0, 0, 0.9214994, 0, 0, 0, 0.92149925, 0, 0.89631474, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D2" unique_id=924598980]
-extra_cull_margin = 16384.0
-mesh = SubResource("QuadMesh_sglur")

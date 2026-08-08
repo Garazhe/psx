@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://7cdl8dymqlvl"
-path="res://.godot/imported/Pvz_Tree.glb-018aad8f5ff6b616167765c58a037d3e.scn"
+path="res://.godot/imported/Pvz_Tree.glb-9328bd59a809e2be5cc455734b67e257.scn"
 
 [deps]
 
-source_file="res://levels/PVZ_ROOM/Pvz_Tree.glb"
-dest_files=["res://.godot/imported/Pvz_Tree.glb-018aad8f5ff6b616167765c58a037d3e.scn"]
+source_file="res://levels/Floor_1/PVZ_ROOM/Pvz_Tree.glb"
+dest_files=["res://.godot/imported/Pvz_Tree.glb-9328bd59a809e2be5cc455734b67e257.scn"]
 
 [params]
 
