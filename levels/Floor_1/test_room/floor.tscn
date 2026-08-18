@@ -2,18 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://b2h14uk6anwsi" path="res://entities/player/player.tscn" id="1_y3w8n"]
 [ext_resource type="PackedScene" uid="uid://cy7em18e501sf" path="res://ui/dialogs/dialog_ui.tscn" id="2_ki4dt"]
-[ext_resource type="Texture2D" uid="uid://cruvnawfccel2" path="res://assets/textures/texupload-STP4-1C3C8F3414124D9C-BA9E0401171BF6F2-64x256-0-192-68x64-P0-15.png" id="3_omkd1"]
 [ext_resource type="PackedScene" uid="uid://bswl6ayvobrms" path="res://ui/dialogs/dialog_trigger.tscn" id="4_v0pgv"]
-[ext_resource type="PackedScene" uid="uid://do6jv4k3lycc3" path="res://assets/models/TableCheck.glb" id="5_x55o8"]
-[ext_resource type="PackedScene" uid="uid://ceuvhbjmey7sv" path="res://assets/models/computer_sem.tscn" id="6_qtgcw"]
-[ext_resource type="PackedScene" uid="uid://xbuwbmuduvt7" path="res://assets/models/PVZ.tscn" id="7_htofw"]
-[ext_resource type="PackedScene" uid="uid://bhwvnwjau870y" path="res://assets/models/pva_stash_room.tscn" id="8_kcefc"]
+[ext_resource type="PackedScene" uid="uid://do6jv4k3lycc3" path="res://assets/models/pvz_main/table_check/TableCheck.glb" id="5_x55o8"]
+[ext_resource type="PackedScene" uid="uid://ceuvhbjmey7sv" path="res://assets/models/pvz_main/computer/computer_sem.tscn" id="6_qtgcw"]
+[ext_resource type="PackedScene" uid="uid://xbuwbmuduvt7" path="res://assets/models/pvz_main/room/PVZ.tscn" id="7_htofw"]
+[ext_resource type="PackedScene" uid="uid://bhwvnwjau870y" path="res://assets/models/pvz_stash/pvz_stashroom/pva_stash_room.tscn" id="8_kcefc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4e0n2"]
+load_path = "res://.godot/imported/texupload-STP4-1C3C8F3414124D9C-BA9E0401171BF6F2-64x256-0-192-68x64-P0-15.png-e7cf5e961b5c5d1ed9c8827229370111.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwugv"]
-albedo_texture = ExtResource("3_omkd1")
+albedo_texture = SubResource("CompressedTexture2D_4e0n2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpusa"]
-albedo_texture = ExtResource("3_omkd1")
+albedo_texture = SubResource("CompressedTexture2D_4e0n2")
 uv1_scale = Vector3(100, 100, 100)
 uv1_triplanar = true
 texture_filter = 0

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d013x5bpls00m"
-path="res://.godot/imported/Pvz_RoomScale.glb-016a14b548710b575fdf851ae6d656bd.scn"
+uid="uid://bf7wpd182yfmc"
+path="res://.godot/imported/ComputerSem.glb-f801a9911f517b4325e12a5b5c06dbaa.scn"
 
 [deps]
 
-source_file="res://assets/models/Pvz_RoomScale.glb"
-dest_files=["res://.godot/imported/Pvz_RoomScale.glb-016a14b548710b575fdf851ae6d656bd.scn"]
+source_file="res://assets/models/pvz_main/computer/ComputerSem.glb"
+dest_files=["res://.godot/imported/ComputerSem.glb-f801a9911f517b4325e12a5b5c06dbaa.scn"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2fuesx828vc8"
-path.s3tc="res://.godot/imported/Pvz_RoomScale_Tiles074_1K-PNG_Color1.png-ef816ccd25251a40b095e813999574d5.s3tc.ctex"
+uid="uid://ng6louv7ax2"
+path.s3tc="res://.godot/imported/Pvz_RoomScale_OfficeCeiling002_1K-JPG_Color1.jpg-e9edb6bb187a0f06b9e029c39cc135ae.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "06426721fa9047d1345c63a73cc399a1"
+"md5": "17f4284d6ed4ab9c8b0d531f8ff8b233"
 }
 
 [deps]
 
-source_file="res://assets/models/Pvz_RoomScale_Tiles074_1K-PNG_Color1.png"
-dest_files=["res://.godot/imported/Pvz_RoomScale_Tiles074_1K-PNG_Color1.png-ef816ccd25251a40b095e813999574d5.s3tc.ctex"]
+source_file="res://assets/models/pvz_main/room/Pvz_RoomScale_OfficeCeiling002_1K-JPG_Color1.jpg"
+dest_files=["res://.godot/imported/Pvz_RoomScale_OfficeCeiling002_1K-JPG_Color1.jpg-e9edb6bb187a0f06b9e029c39cc135ae.s3tc.ctex"]
 
 [params]
 

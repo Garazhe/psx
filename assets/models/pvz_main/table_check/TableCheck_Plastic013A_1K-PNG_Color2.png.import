@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i2rhbnn7pvqq"
-path.s3tc="res://.godot/imported/Pva_StashRoom_Pvz_RoomScale_Concrete046_1K-PNG_Color1.png-e7587bfc6b1d6e476063347f95caa6d7.s3tc.ctex"
+uid="uid://5y4o1rjg7s60"
+path.s3tc="res://.godot/imported/TableCheck_Plastic013A_1K-PNG_Color2.png-a3b36037603ce098b599558bc626c984.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "45ea850e9512567f7aa84ed44500476e"
+"md5": "5944df6c6ed5f281c38230736fa89e3c"
 }
 
 [deps]
 
-source_file="res://assets/models/Pva_StashRoom_Pvz_RoomScale_Concrete046_1K-PNG_Color1.png"
-dest_files=["res://.godot/imported/Pva_StashRoom_Pvz_RoomScale_Concrete046_1K-PNG_Color1.png-e7587bfc6b1d6e476063347f95caa6d7.s3tc.ctex"]
+source_file="res://assets/models/pvz_main/table_check/TableCheck_Plastic013A_1K-PNG_Color2.png"
+dest_files=["res://.godot/imported/TableCheck_Plastic013A_1K-PNG_Color2.png-a3b36037603ce098b599558bc626c984.s3tc.ctex"]
 
 [params]
 

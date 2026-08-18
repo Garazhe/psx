@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0gh7pjyevfdg"
-path.bptc="res://.godot/imported/overcast_soil_puresky_2k.exr-3267fdd3541bc864f60a31f738c9c08d.bptc.ctex"
+uid="uid://sp055yba0j6n"
+path.s3tc="res://.godot/imported/Pva_StashRoom_Ceiling_Backed.png-b7e615fa74da368cdbfdacc4327c69dd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "e43715097b11ad558b27fd4ed3f4d70c"
+}
 
 [deps]
 
-source_file="res://assets/textures/overcast_soil_puresky_2k.exr"
-dest_files=["res://.godot/imported/overcast_soil_puresky_2k.exr-3267fdd3541bc864f60a31f738c9c08d.bptc.ctex"]
+source_file="res://assets/models/pvz_stash/pvz_stashroom/Pva_StashRoom_Ceiling_Backed.png"
+dest_files=["res://.godot/imported/Pva_StashRoom_Ceiling_Backed.png-b7e615fa74da368cdbfdacc4327c69dd.s3tc.ctex"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sdxkhcl2y460"
-path.s3tc="res://.godot/imported/TableCheck_Wood061_1K-PNG_Color1.png-effbb381338580ed204534ee890cb0a5.s3tc.ctex"
+uid="uid://b6iw2wxje5os0"
+path.s3tc="res://.godot/imported/Pvz_RoomScale_Concrete046_1K-PNG_Color1.png-0b91f78062b821bf44f70df9f8a81e28.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ba5c79ee63164b277dd7aaf33e9e5ff0"
+"md5": "45ea850e9512567f7aa84ed44500476e"
 }
 
 [deps]
 
-source_file="res://assets/models/TableCheck_Wood061_1K-PNG_Color1.png"
-dest_files=["res://.godot/imported/TableCheck_Wood061_1K-PNG_Color1.png-effbb381338580ed204534ee890cb0a5.s3tc.ctex"]
+source_file="res://assets/models/pvz_main/room/Pvz_RoomScale_Concrete046_1K-PNG_Color1.png"
+dest_files=["res://.godot/imported/Pvz_RoomScale_Concrete046_1K-PNG_Color1.png-0b91f78062b821bf44f70df9f8a81e28.s3tc.ctex"]
 
 [params]
 

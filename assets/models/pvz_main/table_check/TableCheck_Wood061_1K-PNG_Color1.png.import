@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bre5nox8gon16"
-path.s3tc="res://.godot/imported/Pvz_RoomScale_OfficeCeiling002_1K-JPG_Color1.jpg-cb22e1ec43f2cd5422978ac8e59afce5.s3tc.ctex"
+uid="uid://o58pepst5230"
+path.s3tc="res://.godot/imported/TableCheck_Wood061_1K-PNG_Color1.png-918b5c5564a83df111846defe2349ff4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "17f4284d6ed4ab9c8b0d531f8ff8b233"
+"md5": "ba5c79ee63164b277dd7aaf33e9e5ff0"
 }
 
 [deps]
 
-source_file="res://assets/models/Pvz_RoomScale_OfficeCeiling002_1K-JPG_Color1.jpg"
-dest_files=["res://.godot/imported/Pvz_RoomScale_OfficeCeiling002_1K-JPG_Color1.jpg-cb22e1ec43f2cd5422978ac8e59afce5.s3tc.ctex"]
+source_file="res://assets/models/pvz_main/table_check/TableCheck_Wood061_1K-PNG_Color1.png"
+dest_files=["res://.godot/imported/TableCheck_Wood061_1K-PNG_Color1.png-918b5c5564a83df111846defe2349ff4.s3tc.ctex"]
 
 [params]
 

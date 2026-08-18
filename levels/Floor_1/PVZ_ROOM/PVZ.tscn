@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://2x5bccsbw3h7"]
 
-[ext_resource type="PackedScene" uid="uid://xbuwbmuduvt7" path="res://assets/models/PVZ.tscn" id="1_jptd0"]
+[ext_resource type="PackedScene" uid="uid://xbuwbmuduvt7" path="res://assets/models/pvz_main/room/PVZ.tscn" id="1_jptd0"]
 [ext_resource type="PackedScene" uid="uid://b2h14uk6anwsi" path="res://entities/player/player.tscn" id="2_gct8x"]
 
 [node name="Pvz" type="Node3D" unique_id=1507325787]

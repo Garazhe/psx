@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1mk7yfo4la60"
-path.s3tc="res://.godot/imported/Shelving_DiamondPlate008C_1K-PNG_Color1.png-75c56bc04c28067d4e6462329fde05e7.s3tc.ctex"
+uid="uid://b0gh7pjyevfdg"
+path.bptc="res://.godot/imported/overcast_soil_puresky_2k.exr-c14d506c61036d3977ba12d5e956f00d.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "1c9b48c58ee3b72afa46f86447baf532"
-}
 
 [deps]
 
-source_file="res://assets/models/Shelving_DiamondPlate008C_1K-PNG_Color1.png"
-dest_files=["res://.godot/imported/Shelving_DiamondPlate008C_1K-PNG_Color1.png-75c56bc04c28067d4e6462329fde05e7.s3tc.ctex"]
+source_file="res://assets/textures/skybox/overcast_soil_puresky_2k.exr"
+dest_files=["res://.godot/imported/overcast_soil_puresky_2k.exr-c14d506c61036d3977ba12d5e956f00d.bptc.ctex"]
 
 [params]
 

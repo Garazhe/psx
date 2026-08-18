@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bhwvnwjau870y"]
 
-[ext_resource type="PackedScene" uid="uid://cvewsy2ec5f2j" path="res://assets/models/Pva_StashRoom.glb" id="1_qkwu6"]
-[ext_resource type="PackedScene" uid="uid://dibablnda2hug" path="res://assets/models/Shelving.glb" id="2_o0ohn"]
+[ext_resource type="PackedScene" uid="uid://cvewsy2ec5f2j" path="res://assets/models/pvz_stash/pvz_stashroom/Pva_StashRoom.glb" id="1_qkwu6"]
+[ext_resource type="PackedScene" uid="uid://dibablnda2hug" path="res://assets/models/pvz_stash/shelving/Shelving.glb" id="2_o0ohn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0ohn"]
 emission_enabled = true
@@ -124,7 +124,7 @@ shadow_mesh = SubResource("ArrayMesh_hxao7")
 [node name="Pva_StashRoom" unique_id=1607109630 instance=ExtResource("1_qkwu6")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 
-[node name="Bulb" parent="." index="0" unique_id=921202147]
+[node name="Bulb" parent="." index="0" unique_id=1746248379]
 transform = Transform3D(1.099026, 0, 0, 0, 1.3075261, 0, 0, 0, 1.1735559, 4.442043, 3.0007725, -1.2505362)
 material_override = SubResource("StandardMaterial3D_o0ohn")
 
@@ -137,10 +137,10 @@ light_specular = 0.0
 shadow_enabled = true
 distance_fade_begin = 0.0
 
-[node name="BulbWire" parent="." index="1" unique_id=1261082472]
+[node name="BulbWire" parent="." index="1" unique_id=352457181]
 transform = Transform3D(1.099026, 0, 0, 0, 1.3075261, 0, 0, 0, 1.099026, 4.4417324, 3.7433746, -1.276099)
 
-[node name="Pre-Bulb" parent="." index="6" unique_id=331599178]
+[node name="Pre-Bulb" parent="." index="6" unique_id=1191255136]
 transform = Transform3D(1.099026, 0, 0, 0, 1.3075261, 0, 0, 0, 1.099026, 4.4419556, 3.1906707, -1.250798)
 
 [node name="Bulb2" type="MeshInstance3D" parent="." index="7" unique_id=1522850944]

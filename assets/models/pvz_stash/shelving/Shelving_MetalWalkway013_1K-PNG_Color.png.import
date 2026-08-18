@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8y2vx7sn0viv"
-path.s3tc="res://.godot/imported/Pvz_RoomScale_OfficeCeiling002_1K-JPG_Color1.jpg-8fdde9de2c7b83bbad2771bcfd54b289.s3tc.ctex"
+uid="uid://exbsnavok3mg"
+path.s3tc="res://.godot/imported/Shelving_MetalWalkway013_1K-PNG_Color.png-fad30d508d15f340f51e0ac04f48bd1a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "17f4284d6ed4ab9c8b0d531f8ff8b233"
+"md5": "b5b9e2b291e7121f2b0cc4db359f2958"
 }
 
 [deps]
 
-source_file="res://assets/textures/Pvz_RoomScale_OfficeCeiling002_1K-JPG_Color1.jpg"
-dest_files=["res://.godot/imported/Pvz_RoomScale_OfficeCeiling002_1K-JPG_Color1.jpg-8fdde9de2c7b83bbad2771bcfd54b289.s3tc.ctex"]
+source_file="res://assets/models/pvz_stash/shelving/Shelving_MetalWalkway013_1K-PNG_Color.png"
+dest_files=["res://.godot/imported/Shelving_MetalWalkway013_1K-PNG_Color.png-fad30d508d15f340f51e0ac04f48bd1a.s3tc.ctex"]
 
 [params]
 

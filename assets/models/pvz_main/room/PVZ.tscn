@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://v5dmoo5smdoh" path="res://levels/Floor_1/PVZ_ROOM/Pvz_Tree_Tiles074_1K-PNG_Color1.png" id="1_oqbey"]
 [ext_resource type="Texture2D" uid="uid://d17lp8htsv2x1" path="res://levels/Floor_1/PVZ_ROOM/Pvz_Tree_OfficeCeiling002_1K-JPG_Color1.jpg" id="2_5p6h2"]
-[ext_resource type="Texture2D" uid="uid://nxvw54fo5nua" path="res://assets/textures/Pvz_RoomScale_Concrete046_1K-PNG_Color1.png" id="3_sakeo"]
+[ext_resource type="Texture2D" uid="uid://b6iw2wxje5os0" path="res://assets/models/pvz_main/room/Pvz_RoomScale_Concrete046_1K-PNG_Color1.png" id="3_sakeo"]
 [ext_resource type="Texture2D" uid="uid://d24ky7jwhi62f" path="res://levels/Floor_1/PVZ_ROOM/Pvz_Tree_Concrete046_1K-PNG_Color1.png" id="3_t1t1f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0rpa"]
