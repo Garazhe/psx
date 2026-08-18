@@ -25,9 +25,6 @@ texture_filter = 0
 [node name="Player" parent="." unique_id=1199600279 instance=ExtResource("1_y3w8n")]
 transform = Transform3D(1.085188, 0, 0, 0, 1.0851879, 0, 0, 0, 1.085188, 6.2626047, -1.1920929e-07, 0.0009782314)
 
-[node name="RayCast3D" type="RayCast3D" parent="Player" unique_id=661348800]
-target_position = Vector3(0, 0, -3)
-
 [node name="dialog_ui" parent="." unique_id=569029555 instance=ExtResource("2_ki4dt")]
 mouse_filter = 2
 
@@ -47,15 +44,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03283906)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CSGSphere3D/RigidBody3D" unique_id=950893384]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGSphere3D/RigidBody3D" unique_id=1851052742]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.51891327)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.024899006)
 
 [node name="dialog_trigger" parent="." unique_id=1416930063 instance=ExtResource("4_v0pgv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.133502, -1.9400514, -6.2931256)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 4.133502, -1.9400514, -6.0415945)
 
 [node name="dialog_trigger2" parent="." unique_id=370132531 instance=ExtResource("4_v0pgv")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 9.969338, -1.954726, -5.7915053)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 14.0429945, -1.9754378, -1.2472069)
 names = Array[String](["Him", "you", "Him", "You", "Person"])
 dialogs = Array[String](["Hello, sir", "Bro", "Why would you talk like this?", "Idk lol", "Well, as you wish"])
+
+[node name="dialog_trigger3" parent="." unique_id=123268001 instance=ExtResource("4_v0pgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.035257, -1.660599, -15.772713)
+names = Array[String](["67676", "6969669", "Jeffery", "You", "Jeff"])
 
 [node name="TableCheck" parent="." unique_id=498857537 instance=ExtResource("5_x55o8")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 15.610408, -3.0061724, -0.90599394)

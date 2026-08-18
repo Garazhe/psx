@@ -41,6 +41,7 @@ func continue_dialog():
 		character_name.text = names[current_dialog]
 		dialog_animation.play("RESET")
 		dialog_animation.play("scroll")
+		print(current_dialog)
 	else:
 		dialog_finish()
 		
@@ -50,7 +51,6 @@ func dialog_finish():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	player.sen = 0.01
 	dialog_ui.visible = false
+	current_dialog = -1
 	started = false
-	print(started)
-	print("Zov")
 		
