@@ -14,5 +14,3 @@ dialogs = Array[String](["Sup", "I like Roblox", "It is  a very nice game", "Ok"
 [node name="collision" type="CollisionShape3D" parent="trigger" unique_id=735968016]
 shape = SubResource("BoxShape3D_gif47")
 debug_color = Color(0.8896658, 0.00027319015, 0.8002107, 1)
-
-[connection signal="body_entered" from="trigger" to="." method="dialog_start"]
