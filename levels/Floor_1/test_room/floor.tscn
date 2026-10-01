@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://do6jv4k3lycc3" path="res://assets/models/pvz_main/table_check/TableCheck.glb" id="5_x55o8"]
 [ext_resource type="PackedScene" uid="uid://ceuvhbjmey7sv" path="res://assets/models/pvz_main/computer/computer_sem.tscn" id="6_qtgcw"]
 [ext_resource type="PackedScene" uid="uid://xbuwbmuduvt7" path="res://assets/models/pvz_main/room/PVZ.tscn" id="7_htofw"]
+[ext_resource type="PackedScene" uid="uid://clvhhxpaic04t" path="res://assets/models/test(sasavot)/Wardrobe/Wardrobe.glb" id="8_5l72y"]
 [ext_resource type="PackedScene" uid="uid://bhwvnwjau870y" path="res://assets/models/pvz_stash/pvz_stashroom/pva_stash_room.tscn" id="8_kcefc"]
+[ext_resource type="PackedScene" uid="uid://dve4puxdko0vh" path="res://assets/models/test(sasavot)/Pvz_SlideDoor/Pvz_Doors.glb" id="9_5l72y"]
+[ext_resource type="PackedScene" uid="uid://cfel13i0exx54" path="res://assets/models/test(sasavot)/pvz_doors.tscn" id="10_y3w8n"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4e0n2"]
 load_path = "res://.godot/imported/texupload-STP4-1C3C8F3414124D9C-BA9E0401171BF6F2-64x256-0-192-68x64-P0-15.png-e7cf5e961b5c5d1ed9c8827229370111.s3tc.ctex"
@@ -69,3 +72,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1724758, -2.5195863, -8)
 
 [node name="Pva_StashRoom" parent="." unique_id=1607109630 instance=ExtResource("8_kcefc")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 1.0801806, -2.4732502, 0.8874109)
+
+[node name="Wardrobe" parent="." unique_id=1770355359 instance=ExtResource("8_5l72y")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5366354, -2.4710865, -8.272881)
+
+[node name="Pvz_Doors" parent="." unique_id=1276406147 instance=ExtResource("9_5l72y")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -1.190854, -2.5168934, -12.369851)
+
+[node name="Pvz_Doors2" parent="." unique_id=1855923218 instance=ExtResource("10_y3w8n")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -1.9109305, -2.505786, -16.520706)

@@ -74,7 +74,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8894037, 0)
 
 [node name="Shader" type="MeshInstance3D" parent="Camera3D" unique_id=1728133074]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009087563, -0.0031234622, -0.0051225424)
-visible = false
 extra_cull_margin = 16384.0
 custom_aabb = AABB(2, 0, 0, 0, 0, 0)
 mesh = SubResource("QuadMesh_g4v7s")

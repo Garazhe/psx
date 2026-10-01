@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cfel13i0exx54"]
+
+[ext_resource type="PackedScene" uid="uid://dve4puxdko0vh" path="res://assets/models/test(sasavot)/Pvz_SlideDoor/Pvz_Doors.glb" id="1_amjpj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5l72y"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(0.94466555, 0.8163287, 0.67022574, 1)
+
+[node name="Pvz_Doors" unique_id=1276406147 instance=ExtResource("1_amjpj")]
+
+[node name="Plane" parent="." index="0" unique_id=570143950]
+surface_material_override/1 = SubResource("StandardMaterial3D_5l72y")
