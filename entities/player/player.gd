@@ -1,12 +1,12 @@
 extends CharacterBody3D
 
 #variables
-@onready var raycast = $Camera3D/InteractRay
+var interaction_enabled := true
 var sen = 0.005
 var SPEED = 5.0
 var current_dialogue_target: Node3D = null
 const JUMP_VELOCITY = 0
-@onready var dialoger: Node3D = get_tree().current_scene.get_node("dialog_trigger2")
+
 
 @export var look_at_speed: float = 4.0
 var dialogue_started: bool = false
@@ -17,7 +17,7 @@ func _ready():
 
 #Rotation and interaction check
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and not dialogue_started:
 		rotate_y(-event.relative.x * sen) 
 		$Camera3D.rotate_x(-event.relative.y * sen) 
 		$Camera3D.rotation.x = clamp($Camera3D.rotation.x, -PI/2, PI/2)
@@ -57,7 +57,6 @@ func _physics_process(delta: float) -> void:
 
 #Dialog
 func _process(delta):
-	check_interaction()
 	
 	if dialogue_started and current_dialogue_target:
 		var target_pos = current_dialogue_target.global_position
@@ -71,28 +70,18 @@ func _process(delta):
 		$Camera3D.rotation.x = lerp_angle($Camera3D.rotation.x, 0.0, look_at_speed * delta)
 		
 
-func check_interaction():
+func start_dialogue(target: Node3D) -> void:
+	if target is DialogueActionable3D and (target.dialogue_resource == null or target.dialogue_cue.is_empty()):
+		return
 	if dialogue_started:
-		return 
-		
-	if not raycast.is_colliding():
 		return
-		
-	var target = raycast.get_collider()
-	
-	if target.has_method("action") and Input.is_action_just_pressed("ui_interact"):
-		current_dialogue_target = target
-		target.action()
-		dialogue_started = true
-	
-	if target.name == "test_cube" and Input.is_action_just_pressed("ui_interact"):
-		States.evil_bruh = not States.evil_bruh
-		print("evil bruh is evil lol")
+	current_dialogue_target = target
+	dialogue_started = true
+	interaction_enabled = false
+	$PickupController.release()
+	target.action()
 
-	
-	if not raycast.is_colliding():
-		return
-	
 func _on_dialogue_ended(_resource: DialogueResource):
 	dialogue_started = false
+	interaction_enabled = true
 	current_dialogue_target = null

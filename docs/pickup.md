@@ -23,3 +23,16 @@ even if the controller disappears. Pre-existing exceptions are preserved.
 Validation: godot --headless --path . --script tests/pickup_test.gd
 Checks include hold, mass limit, throw, wall obstruction, overlap-safe release,
 dialogue lock, and deletion. Visual feel must still be tested in Godot.
+
+## After updating the project
+
+Close the running game, open project.godot in the editor and wait for import.
+Dialogue Manager must be enabled in Project Settings > Plugins. The .dialogue
+sources need its importer; generated .godot/imported files are not committed.
+If dialogue resources fail to load, close Godot and run:
+
+    godot --headless --editor --path . --import
+
+Then reopen the editor. Do not copy another machine's .godot cache.
+The player uses one InteractRay and InteractionController for both pickup and
+Dialogue Manager actions; do not replace the player scene with an older version.
