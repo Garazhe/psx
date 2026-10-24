@@ -36,3 +36,22 @@ If dialogue resources fail to load, close Godot and run:
 Then reopen the editor. Do not copy another machine's .godot cache.
 The player uses one InteractRay and InteractionController for both pickup and
 Dialogue Manager actions; do not replace the player scene with an older version.
+
+## Shelving collision
+
+`Shelving.glb` uses `shelving_import.gd` as a post-import script. The original
+board trimeshes have inward-facing top faces and let rigid bodies fall through.
+The script welds mesh seams, finds disconnected rectangular pieces and creates
+seven solid box colliders: three boards and four posts. It preserves the spaces
+between boards and applies to direct GLB instances as well as `shelving.tscn`.
+If the source model is changed to non-rectangular pieces, review this collision
+approximation and rerun `tests/shelving_collision_test.gd`.
+
+After updating, allow Godot to reimport `Shelving.glb`. If an existing editor
+session keeps the old colliders, select the GLB and click Reimport in the Import
+dock, then restart the game. Generated `.godot` files are not versioned.
+
+Regression: `godot --headless --path . --script tests/shelving_collision_test.gd`.
+This tests all boards, an upward throw, a fast hit on a post, open shelf gaps,
+and a held box pulled towards the opposite side of a board, at the stash-room
+scale. Collision assertions allow the physics solver's transient contact slop.
