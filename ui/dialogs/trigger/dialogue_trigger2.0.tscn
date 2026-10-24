@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cxtoaepif4esg"]
+
+[ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="1_pes7i"]
+[ext_resource type="Resource" uid="uid://c4cr85fhd2tfi" path="res://ui/dialogs/dialogues/test1.dialogue" id="2_bfrob"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="DialogueTrigger2_0" type="Area3D" unique_id=985196190]
+script = ExtResource("1_pes7i")
+dialogue_resource = ExtResource("2_bfrob")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="dialogue_test" type="CollisionShape3D" parent="." unique_id=445515240]
+shape = SubResource("BoxShape3D_g4v7s")
+debug_color = Color(0.9913345, 0, 0.27290073, 0.41960785)
+
+[connection signal="actioned" from="." to="." method="_on_actioned"]

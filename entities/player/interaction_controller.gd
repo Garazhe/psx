@@ -4,11 +4,15 @@ extends Node
 @onready var ray: RayCast3D = $"../Camera3D/InteractionRay"
 @onready var pickup: PickupController = $"../PickupController"
 var interaction_requested := false
+var throw_requested := false
 
 func _ready() -> void:
 	ray.add_exception(actor)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("throw_item") and actor.interaction_enabled and pickup.is_holding():
+		throw_requested = true
+		get_viewport().set_input_as_handled()
 	if event.is_action_pressed("ui_interact") and not event.is_echo() and actor.interaction_enabled:
 		interaction_requested = true
 		get_viewport().set_input_as_handled()
@@ -16,7 +20,13 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(_delta: float) -> void:
 	if not actor.interaction_enabled:
 		interaction_requested = false
+		throw_requested = false
 		pickup.release()
+		return
+	if throw_requested:
+		throw_requested = false
+		interaction_requested = false
+		pickup.throw_held()
 		return
 	if not interaction_requested:
 		return

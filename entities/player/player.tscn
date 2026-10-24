@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://b2h14uk6anwsi"]
 
 [ext_resource type="Script" uid="uid://84ef4gmh44m" path="res://entities/player/player.gd" id="1_symyc"]
-
-[ext_resource type="Script" path="res://entities/player/pickup_controller.gd" id="2_pickup"]
-[ext_resource type="Script" path="res://entities/player/interaction_controller.gd" id="3_interaction"]
+[ext_resource type="AudioStream" uid="uid://ceyrd5g65ghyf" path="res://sounds/Music/Lofi-Pvz.mp3" id="2_abrql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfv1e"]
 
@@ -77,18 +75,13 @@ extra_cull_margin = 16384.0
 custom_aabb = AABB(2, 0, 0, 0, 0, 0)
 mesh = SubResource("QuadMesh_g4v7s")
 
+[node name="InteractRay" type="RayCast3D" parent="Camera3D" unique_id=566932952]
+transform = Transform3D(1, 0, 0, 0, 0.10767715, -0.99742013, 0, 1.4961302, 0.071784765, 0, -0.021360874, 0)
+collide_with_areas = true
+
 [node name="HoldPosition2" type="Marker3D" parent="." unique_id=526892746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5389345, 0.22621298, -1.204983)
 
-[node name="InteractionRay" type="RayCast3D" parent="Camera3D"]
-target_position = Vector3(0, 0, -3)
-collide_with_areas = true
-
-[node name="HoldPoint" type="Marker3D" parent="Camera3D"]
-position = Vector3(0, -0.15, -1.8)
-
-[node name="PickupController" type="Node" parent="."]
-script = ExtResource("2_pickup")
-
-[node name="InteractionController" type="Node" parent="."]
-script = ExtResource("3_interaction")
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=297701449]
+stream = ExtResource("2_abrql")
+autoplay = true
