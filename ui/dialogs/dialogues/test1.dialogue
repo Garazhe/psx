@@ -1,0 +1,14 @@
+~ start
+if States.evil_bruh:
+	FAMILY GUY: YOU TOUCHED NY PRECIOUS CUBE&!&!&!&
+	YOU: nah
+	FAMILY GUY: oh shit mb bro
+	
+else:
+	FAMILY GUY: [[Hi|Hello|Howdy]], I am Peter Griffin from the show "Family guy".
+
+	YOU: I do not belive you
+
+	FAMILY GUY: I am real FAMILY GUY
+
+=> END

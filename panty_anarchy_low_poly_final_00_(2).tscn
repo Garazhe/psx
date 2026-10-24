@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://sr61rul6caji"]
+
+[ext_resource type="PackedScene" uid="uid://b5rcom11v63tk" path="res://entities/monster/Panty_Anarchy_LowPolyFinal_00 (2).glb" id="1_y2xai"]
+
+[node name="Panty_Anarchy_LowPolyFinal_00 (2)" unique_id=512821150 instance=ExtResource("1_y2xai")]
+
+[node name="Cube" parent="rig/Skeleton3D" parent_id_path=PackedInt32Array(649404348) index="1" unique_id=567422833]
+custom_aabb = AABB(0, 0, 0, -0.645, 0, 0)

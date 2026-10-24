@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://hijnbsmwo53s"]
+
+[ext_resource type="PackedScene" uid="uid://dibablnda2hug" path="res://assets/models/pvz_stash/shelving/Shelving.glb" id="1_0y8f4"]
+
+[node name="Shelving" unique_id=1069419292 instance=ExtResource("1_0y8f4")]

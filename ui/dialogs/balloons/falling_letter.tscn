@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://4fp8wydpbl4w"]
+
+[ext_resource type="Script" uid="uid://o3udx23kst3p" path="res://ui/dialogs/balloons/falling_letter.gd" id="1_uh2qx"]
+
+[node name="FallingLetter" type="Node2D" unique_id=1063631948]
+script = ExtResource("1_uh2qx")
+
+[node name="Label" type="Label" parent="." unique_id=99553319]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "pipis"

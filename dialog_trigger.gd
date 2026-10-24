@@ -11,14 +11,16 @@ var skip_requested: bool = false
 
 @export var names: Array[String]
 @export var dialogs: Array[String]
+@export var steps: Array[int]
 @export var speaker: Node3D
 
-var current_dialog = -1
-var started = false
+@onready var current_dialog = -1
+@onready var started = false
+
 
 func _ready() -> void:
 	dialog_ui.get_node("continue").connect("pressed", Callable(self, 'continue_dialog'))
-
+	
 func show_text(text:String)->void:
 	dialog_text.text = text
 	dialog_text.visible_characters = 0
@@ -26,7 +28,7 @@ func show_text(text:String)->void:
 	skip_requested = false
 
 func dialog_start(body):
-	if body == player and !started:
+	if body == player and started == false:
 		started = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		player.SPEED = 0.0
@@ -41,16 +43,15 @@ func continue_dialog():
 		character_name.text = names[current_dialog]
 		dialog_animation.play("RESET")
 		dialog_animation.play("scroll")
-		print(current_dialog)
 	else:
 		dialog_finish()
 		
 		
 func dialog_finish():
-	player.SPEED = 5.0
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	player.sen = 0.01
-	dialog_ui.visible = false
-	current_dialog = -1
-	started = false
-		
+	if started == true:
+		player.SPEED = 5.0
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		player.sen = 0.01
+		dialog_ui.visible = false
+		current_dialog = -1
+		started = false

@@ -1,15 +1,19 @@
 extends CharacterBody3D
 
 #variables
-@onready var raycast = $SeeCast
+@onready var raycast = $Camera3D/InteractRay
 var sen = 0.005
 var SPEED = 5.0
+var current_dialogue_target: Node3D = null
 const JUMP_VELOCITY = 0
 @onready var dialoger: Node3D = get_tree().current_scene.get_node("dialog_trigger2")
-@onready var ds = dialoger.started
+
+@export var look_at_speed: float = 4.0
+var dialogue_started: bool = false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED # Прячем курсор при старте игры
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
 #Rotation and interaction check
 func _unhandled_input(event):
@@ -22,9 +26,14 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta: float) -> void:
+	
+	
+	if dialogue_started:
+		velocity = Vector3.ZERO         
+		move_and_slide()
+		return
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -49,10 +58,41 @@ func _physics_process(delta: float) -> void:
 #Dialog
 func _process(delta):
 	check_interaction()
+	
+	if dialogue_started and current_dialogue_target:
+		var target_pos = current_dialogue_target.global_position
+		target_pos.y = global_position.y          # игнорируем высоту (чтобы не задирать камеру)
+		
+		var direction = (target_pos - global_position).normalized()
+		var target_rotation = atan2(-direction.x, -direction.z)
+		
+		# Плавно поворачиваем тело игрока
+		rotation.y = lerp_angle(rotation.y, target_rotation, look_at_speed * delta)
+		$Camera3D.rotation.x = lerp_angle($Camera3D.rotation.x, 0.0, look_at_speed * delta)
+		
 
 func check_interaction():
-	if raycast.is_colliding():
-		var target = raycast.get_collider().get_parent()
-		if target.has_method("dialog_start"):
-			if Input.is_action_just_pressed("ui_interact"):
-				target.dialog_start(self)
+	if dialogue_started:
+		return 
+		
+	if not raycast.is_colliding():
+		return
+		
+	var target = raycast.get_collider()
+	
+	if target.has_method("action") and Input.is_action_just_pressed("ui_interact"):
+		current_dialogue_target = target
+		target.action()
+		dialogue_started = true
+	
+	if target.name == "test_cube" and Input.is_action_just_pressed("ui_interact"):
+		States.evil_bruh = not States.evil_bruh
+		print("evil bruh is evil lol")
+
+	
+	if not raycast.is_colliding():
+		return
+	
+func _on_dialogue_ended(_resource: DialogueResource):
+	dialogue_started = false
+	current_dialogue_target = null

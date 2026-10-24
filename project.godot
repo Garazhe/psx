@@ -15,10 +15,23 @@ run/main_scene="uid://bew5g0mylme4a"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogueManager="*uid://c3rodes2l3gxb"
+States="*uid://c4xwdpv5awxia"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://ui/dialogs/balloons/balloon.tscn"
+
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [filesystem]
 
@@ -69,6 +82,10 @@ ui_interact={
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(309, 10),"global_position":Vector2(323, 83),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://ui/dialogs/dialogues/test1.dialogue", "res://ui/dialogs/dialogues/untitled.dialogue")
 
 [physics]
 
