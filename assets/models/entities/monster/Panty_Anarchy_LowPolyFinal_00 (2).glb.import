@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b5rcom11v63tk"
-path="res://.godot/imported/Panty_Anarchy_LowPolyFinal_00 (2).glb-e4aea08d4275b6d728ad69612cf2aef9.scn"
+path="res://.godot/imported/Panty_Anarchy_LowPolyFinal_00 (2).glb-ac29e224fcfb414739987a32231fa8f3.scn"
 
 [deps]
 
-source_file="res://entities/monster/Panty_Anarchy_LowPolyFinal_00 (2).glb"
-dest_files=["res://.godot/imported/Panty_Anarchy_LowPolyFinal_00 (2).glb-e4aea08d4275b6d728ad69612cf2aef9.scn"]
+source_file="res://assets/models/entities/monster/Panty_Anarchy_LowPolyFinal_00 (2).glb"
+dest_files=["res://.godot/imported/Panty_Anarchy_LowPolyFinal_00 (2).glb-ac29e224fcfb414739987a32231fa8f3.scn"]
 
 [params]
 

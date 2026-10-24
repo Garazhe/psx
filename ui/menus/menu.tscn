@@ -29,6 +29,15 @@ offset_bottom = 454.0
 theme_override_font_sizes/font_size = 42
 text = "Quit"
 
+[node name="Gaybox" type="Button" parent="." unique_id=1160811399]
+offset_left = 480.0
+offset_top = 27.0
+offset_right = 661.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 42
+text = "gaybox"
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Test_room" to="." method="_on_test_room_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Gaybox" to="." method="_on_gaybox_pressed"]

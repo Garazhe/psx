@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b2h14uk6anwsi"]
 
-[ext_resource type="Script" uid="uid://84ef4gmh44m" path="res://entities/player/player.gd" id="1_symyc"]
+[ext_resource type="Script" uid="uid://84ef4gmh44m" path="res://assets/models/entities/player/player.gd" id="1_symyc"]
 [ext_resource type="AudioStream" uid="uid://ceyrd5g65ghyf" path="res://sounds/Music/Lofi-Pvz.mp3" id="2_abrql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfv1e"]
@@ -71,6 +71,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8894037, 0)
 
 [node name="Shader" type="MeshInstance3D" parent="Camera3D" unique_id=1728133074]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009087563, -0.0031234622, -0.0051225424)
+visible = false
 extra_cull_margin = 16384.0
 custom_aabb = AABB(2, 0, 0, 0, 0, 0)
 mesh = SubResource("QuadMesh_g4v7s")

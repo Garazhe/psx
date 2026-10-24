@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://sr61rul6caji"]
 
-[ext_resource type="PackedScene" uid="uid://b5rcom11v63tk" path="res://entities/monster/Panty_Anarchy_LowPolyFinal_00 (2).glb" id="1_y2xai"]
+[ext_resource type="PackedScene" uid="uid://b5rcom11v63tk" path="res://assets/models/entities/monster/Panty_Anarchy_LowPolyFinal_00 (2).glb" id="1_y2xai"]
 
 [node name="Panty_Anarchy_LowPolyFinal_00 (2)" unique_id=512821150 instance=ExtResource("1_y2xai")]
 

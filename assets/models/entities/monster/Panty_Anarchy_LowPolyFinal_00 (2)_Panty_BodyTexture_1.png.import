@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dduo82hhgq6dx"
-path.s3tc="res://.godot/imported/Panty_Anarchy_LowPolyFinal_00 (2)_Panty_BodyTexture.png-ff1a0068ea66f3feb82dbcc52586fad0.s3tc.ctex"
+uid="uid://bawrttxohcri2"
+path.s3tc="res://.godot/imported/Panty_Anarchy_LowPolyFinal_00 (2)_Panty_BodyTexture_1.png-17bebb6888663ab47058a113d4b13694.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "6e3b94b57ce448febf22ddb6bec9a80b"
+"md5": "b7a42d0b3d75e496f075e9cf6b1a95d6"
 }
 
 [deps]
 
-source_file="res://entities/monster/Panty_Anarchy_LowPolyFinal_00 (2)_Panty_BodyTexture.png"
-dest_files=["res://.godot/imported/Panty_Anarchy_LowPolyFinal_00 (2)_Panty_BodyTexture.png-ff1a0068ea66f3feb82dbcc52586fad0.s3tc.ctex"]
+source_file="res://assets/models/entities/monster/Panty_Anarchy_LowPolyFinal_00 (2)_Panty_BodyTexture_1.png"
+dest_files=["res://.godot/imported/Panty_Anarchy_LowPolyFinal_00 (2)_Panty_BodyTexture_1.png-17bebb6888663ab47058a113d4b13694.s3tc.ctex"]
 
 [params]
 

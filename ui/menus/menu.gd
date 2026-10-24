@@ -6,6 +6,8 @@ func _on_quit_pressed() -> void:
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/Floor_1/PVZ_ROOM/PVZ.tscn")
 
-
 func _on_test_room_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/Floor_1/test_room/floor.tscn")
+
+func _on_gaybox_pressed() -> void:
+	get_tree().change_scene_to_file("res://levels/Floor_1/test_room/floor1_greybox/greybox1.tscn")
