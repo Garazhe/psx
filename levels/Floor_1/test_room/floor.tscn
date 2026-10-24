@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://xbuwbmuduvt7" path="res://assets/models/pvz_main/room/PVZ.tscn" id="7_htofw"]
 [ext_resource type="PackedScene" uid="uid://bhwvnwjau870y" path="res://assets/models/pvz_stash/pvz_stashroom/pva_stash_room.tscn" id="8_kcefc"]
 [ext_resource type="PackedScene" uid="uid://b5rcom11v63tk" path="res://entities/monster/Panty_Anarchy_LowPolyFinal_00 (2).glb" id="9_5l72y"]
+[ext_resource type="PackedScene" path="res://entities/pickups/box.tscn" id="9_box"]
 [ext_resource type="PackedScene" uid="uid://dtcbrjw3g0jjj" path="res://assets/models/employeeTable/PvzTableGolyi.glb" id="10_ki4dt"]
 [ext_resource type="PackedScene" uid="uid://b6y8dcpqr3r5m" path="res://assets/models/test(sasavot)/test_cube.tscn" id="10_y3w8n"]
 [ext_resource type="PackedScene" uid="uid://cxtoaepif4esg" path="res://ui/dialogs/trigger/dialogue_trigger2.0.tscn" id="11_ki4dt"]
@@ -70,3 +71,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0806837, -1.6698462, -17.13
 
 [node name="DialogueTrigger2_0" parent="." unique_id=455421108 instance=ExtResource("11_ki4dt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.372728, -0.98445463, -21.85195)
+dialogue_resource = null
+
+[node name="PickupBox" parent="." unique_id=1191681881 instance=ExtResource("9_box")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.058233738, -2.17325, -14.420791)
