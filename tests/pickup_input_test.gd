@@ -14,6 +14,7 @@ func run():
 	var ray = c.get_node("InteractRay")
 	ray.force_raycast_update()
 	print("camera=",c.global_position," box=",b.global_position," distance=",c.global_position.distance_to(b.global_position)," ray=",ray.get_collider())
+	var original_y: float = b.global_position.y
 	var e = InputEventKey.new()
 	e.physical_keycode = KEY_E
 	e.pressed = true
@@ -23,7 +24,6 @@ func run():
 		await physics_frame
 	assert(p.get_node("PickupController").is_holding(), "E must pick up the box through a dialogue trigger")
 	assert(p.interaction_enabled, "Pickup must not start a dialogue")
-	var original_y: float = b.global_position.y
 	for i in range(120):
 		await physics_frame
 	assert(b.global_position.y > original_y + 0.15, "Box must actually lift off the floor")

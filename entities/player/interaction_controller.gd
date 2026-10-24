@@ -5,11 +5,24 @@ extends Node
 @onready var pickup: PickupController = $"../PickupController"
 var interaction_requested := false
 var throw_requested := false
+var distance_steps := 0.0
 
 func _ready() -> void:
 	ray.add_exception(actor)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if actor.interaction_enabled and pickup.is_holding():
+		var step := 0.0
+		if event.is_action_pressed("pickup_closer"):
+			step = -1.0
+		elif event.is_action_pressed("pickup_farther"):
+			step = 1.0
+		if step != 0.0:
+			if event is InputEventMouseButton and event.factor > 0.0:
+				step *= event.factor
+			distance_steps += step
+			get_viewport().set_input_as_handled()
+			return
 	if event.is_action_pressed("throw_item") and actor.interaction_enabled and pickup.is_holding():
 		throw_requested = true
 		get_viewport().set_input_as_handled()
@@ -18,6 +31,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 func _physics_process(_delta: float) -> void:
+	var pending_steps := distance_steps
+	distance_steps = 0.0
 	if not actor.interaction_enabled:
 		interaction_requested = false
 		throw_requested = false
@@ -29,6 +44,7 @@ func _physics_process(_delta: float) -> void:
 		pickup.throw_held()
 		return
 	if not interaction_requested:
+		pickup.adjust_distance(pending_steps)
 		return
 	interaction_requested = false
 	if pickup.is_holding():

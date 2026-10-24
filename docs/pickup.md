@@ -1,28 +1,46 @@
 # Physics pickup
 
-E picks up/releases; left mouse throws. Open Test Room from the main menu.
+E picks up/releases; left mouse throws. While holding, mouse wheel up moves the
+box closer and wheel down moves it farther. Scrolling without a held item or
+during dialogue does nothing. Open Test Room from the main menu.
+
 Select Player/PickupController (enable editable children for a level instance) to tune:
 
-- hold_distance: 1.8 m; desired distance, shortened by obstacles.
-- stiffness: 35; increase for a more responsive hold.
-- damping: 12; increase if oscillating, decrease if sluggish.
-- target_speed: 8 m/s; limits target jumps during fast camera turns.
-- rotation_stiffness / rotation_damping: 12 / 5; follows camera while preserving the pickup orientation.
+- hold_distance: 1.8 m initially; remembers the last selected distance.
+- min_hold_distance / max_hold_distance: 0.8 / 3.0 m.
+- distance_step: 0.2 m per wheel notch (fractional wheel events are supported).
+- rotation_speed: 8 rad/s; follows camera while preserving pickup orientation.
 - throw_speed: 8 m/s velocity increment, independent of mass.
 - max_mass / max_radius: 15 kg / 0.8 m.
 
+The held body is temporarily frozen in kinematic mode. Each physics tick moves
+it to the selected distance using move_and_collide with its actual collision
+shapes. There is no spring lag in free space; distances are world metres even
+when the Player is scaled. Obstacles take priority: the box stops closer when
+blocked and returns to the selected distance when the path is clear.
+Rotation advances in small increments and stops if the next orientation overlaps
+geometry. This is not a guarantee against all clipping with extreme rotations
+or moving geometry. Visual feel should still be tested in the editor.
+
 PickupBody3D requires enabled direct-child primitive CollisionShape3D nodes.
 Use unit scale on rigid bodies; edit mesh/shape dimensions instead.
-The wall sweep uses a conservative enclosing sphere, so rectangular objects may
-stop earlier near walls. Initial contacts are left to the physics solver on the
-body-to-target sweep so boxes can leave the floor. This is not a guarantee against
-all clipping during extreme rotation or moving-geometry interactions.
-Player collision exceptions are owned by the item and restored after separation,
-even if the controller disappears. Pre-existing exceptions are preserved.
+A conservative sphere sweep from the camera further restricts the target near
+walls. If that sphere already overlaps geometry, movement still uses the body's
+actual-shape sweep rather than trapping the held box in place.
 
-Validation: godot --headless --path . --script tests/pickup_test.gd
-Checks include hold, mass limit, throw, wall obstruction, overlap-safe release,
-dialogue lock, and deletion. Visual feel must still be tested in Godot.
+Release/throw restores freeze mode and CCD settings, resumes gravity and carries
+bounded movement velocity. Deleting the controller also releases the body.
+Player collision exceptions are owned by the item and restored after separation;
+pre-existing exceptions are preserved. Freezing ends as soon as dialogue begins.
+
+Validation commands:
+
+    godot --headless --path . --script tests/pickup_test.gd
+    godot --headless --path . --script tests/pickup_input_test.gd
+    godot --headless --path . --script tests/pickup_distance_test.gd
+
+These cover real E/wheel events, distance bounds, walking/turning without lag,
+wall obstruction, release/throw, dialogue blocking and body/player deletion.
 
 ## After updating the project
 
