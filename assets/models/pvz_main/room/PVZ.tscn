@@ -271,6 +271,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9733458, -0.20157862, -0.06
 light_color = Color(1, 0.95686275, 0.72156864, 1)
 light_energy = 0.5
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling/OmniLight3D" unique_id=1683461983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8967466, -0.20157862, -0.06507421)
+light_color = Color(1, 0.95686275, 0.72156864, 1)
+light_energy = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Ceiling/OmniLight3D" unique_id=1395627287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9840717, -0.20157862, -0.06507421)
+light_color = Color(1, 0.95686275, 0.72156864, 1)
+light_energy = 0.5
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling/OmniLight3D/OmniLight3D2" unique_id=1604715809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2934687, 0.1775763, 2.7947378)
+light_color = Color(1, 0.95686275, 0.72156864, 1)
+light_energy = 0.5
+
 [node name="Front" type="MeshInstance3D" parent="." unique_id=1054837978]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5312694, 4.446997)
 material_override = SubResource("StandardMaterial3D_sakeo")
