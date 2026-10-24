@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dtcbrjw3g0jjj" path="res://assets/models/employeeTable/PvzTableGolyi.glb" id="10_ki4dt"]
 [ext_resource type="PackedScene" uid="uid://b6y8dcpqr3r5m" path="res://assets/models/test(sasavot)/test_cube.tscn" id="10_y3w8n"]
 [ext_resource type="PackedScene" uid="uid://cxtoaepif4esg" path="res://ui/dialogs/trigger/dialogue_trigger2.0.tscn" id="11_ki4dt"]
+[ext_resource type="PackedScene" path="res://entities/pickups/box.tscn" id="12_omkd1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwugv"]
 albedo_texture = ExtResource("3_kcefc")
@@ -73,5 +74,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0806837, -1.6698462, -17.13
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.372728, -0.98445463, -21.85195)
 dialogue_resource = null
 
+<<<<<<< Updated upstream
 [node name="PickupBox" parent="." unique_id=1191681881 instance=ExtResource("9_box")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.058233738, -2.17325, -14.420791)
+=======
+[node name="PickupBox" parent="." unique_id=1673590457 instance=ExtResource("12_omkd1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3518314, -2.1732504, 0.09590632)
+>>>>>>> Stashed changes
