@@ -34,6 +34,16 @@ func _physics_process(_delta: float) -> void:
 	if pickup.is_holding():
 		pickup.release()
 		return
+	# Dialogue areas are triggers, not physical obstructions. First test bodies
+	# only: walls still block pickup, even when a trigger surrounds the box.
+	var include_areas := ray.collide_with_areas
+	ray.collide_with_areas = false
+	ray.force_raycast_update()
+	var physical_target := ray.get_collider() as Node
+	ray.collide_with_areas = include_areas
+	if physical_target is PickupBody3D:
+		pickup.pick_up(physical_target)
+		return
 	ray.force_raycast_update()
 	var target := ray.get_collider() as Node
 	if target is PickupBody3D:
