@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://84ef4gmh44m" path="res://entities/player/player.gd" id="1_symyc"]
 
+[ext_resource type="Script" path="res://entities/player/pickup_controller.gd" id="2_pickup"]
+[ext_resource type="Script" path="res://entities/player/interaction_controller.gd" id="3_interaction"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfv1e"]
 
 [sub_resource type="Shader" id="Shader_symyc"]
@@ -58,10 +61,6 @@ size = Vector2(2, 2)
 [node name="Player" type="CharacterBody3D" unique_id=1199600279]
 script = ExtResource("1_symyc")
 
-[node name="SeeCast" type="RayCast3D" parent="." unique_id=566932952]
-transform = Transform3D(1.5, 0, 0, 0, 0.9481764, -1.320716, 0, 1.7609547, 0.7111323, 0, 0.8680428, 0)
-collide_with_areas = true
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871787417]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_sfv1e")
@@ -81,3 +80,16 @@ mesh = SubResource("QuadMesh_g4v7s")
 
 [node name="HoldPosition2" type="Marker3D" parent="." unique_id=526892746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5389345, 0.22621298, -1.204983)
+
+[node name="InteractionRay" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -3)
+collide_with_areas = true
+
+[node name="HoldPoint" type="Marker3D" parent="Camera3D"]
+position = Vector3(0, -0.15, -1.8)
+
+[node name="PickupController" type="Node" parent="."]
+script = ExtResource("2_pickup")
+
+[node name="InteractionController" type="Node" parent="."]
+script = ExtResource("3_interaction")

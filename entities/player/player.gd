@@ -1,12 +1,10 @@
 extends CharacterBody3D
 
 #variables
-@onready var raycast = $SeeCast
+var interaction_enabled := true
 var sen = 0.005
 var SPEED = 5.0
 const JUMP_VELOCITY = 0
-@onready var dialoger: Node3D = get_tree().current_scene.get_node("dialog_trigger2")
-@onready var ds = dialoger.started
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED # Прячем курсор при старте игры
@@ -45,14 +43,3 @@ func _physics_process(delta: float) -> void:
 	
 
 	move_and_slide()
-
-#Dialog
-func _process(delta):
-	check_interaction()
-
-func check_interaction():
-	if raycast.is_colliding():
-		var target = raycast.get_collider().get_parent()
-		if target.has_method("dialog_start"):
-			if Input.is_action_just_pressed("ui_interact"):
-				target.dialog_start(self)

@@ -28,6 +28,7 @@ func show_text(text:String)->void:
 func dialog_start(body):
 	if body == player and !started:
 		started = true
+		player.interaction_enabled = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		player.SPEED = 0.0
 		player.sen = 0.0
@@ -53,4 +54,5 @@ func dialog_finish():
 	dialog_ui.visible = false
 	current_dialog = -1
 	started = false
+	player.interaction_enabled = true
 		
