@@ -1,7 +1,7 @@
 extends Node
 
 @onready var actor: CharacterBody3D = get_parent()
-@onready var ray: RayCast3D = $"../Camera3D/InteractionRay"
+@onready var ray: RayCast3D = $"../Camera3D/InteractRay"
 @onready var pickup: PickupController = $"../PickupController"
 var interaction_requested := false
 var throw_requested := false
@@ -48,6 +48,12 @@ func _physics_process(_delta: float) -> void:
 	var target := ray.get_collider() as Node
 	if target is PickupBody3D:
 		pickup.pick_up(target)
+		return
+	if target != null and target.has_method("action"):
+		actor.start_dialogue(target)
+		return
+	if target != null and target.name == "test_cube":
+		States.evil_bruh = not States.evil_bruh
 		return
 	# Existing dialogue colliders are children of the dialogue trigger.
 	while target != null and target != get_tree().current_scene:

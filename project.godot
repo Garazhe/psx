@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="ps-horror"
-run/main_scene="uid://bew5g0mylme4a"
+run/main_scene="res://ui/menus/menu.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-DialogueManager="*uid://c3rodes2l3gxb"
-States="*uid://c4xwdpv5awxia"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+States="*res://globals/States.gd"
 
 [dialogue_manager]
 
